@@ -5,6 +5,10 @@ import { useToggle } from './hooks/useToggle';
 export default function Home() {
   const [count, setCount] = React.useState(0);
   const [isHappy, toggleIsHappy] = useToggle();
+
+  React.useEffect(() => {
+    document.title='Count: ' + count
+  });
   return (
     <React.Fragment>
       <h1 onClick={toggleIsHappy}>{isHappy ? ':)' : ':('}</h1>
